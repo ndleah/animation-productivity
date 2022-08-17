@@ -1,0 +1,6 @@
+date,week,month,year,lpath,show,jobnumber,tasktype,dept,task,scene,shot,entitytype,entity,jiraproject,jiraissue,username,zone,entries,days_logged,days_signed_off
+2019-04-08,2019-04-08,2019-04-01,2019,/JOB(project10)/JOBNUMBER(7547)/TASKLEVEL(department)/DEPT(anim)/TASK(td),project10,7547,global-dept,anim,td,,,,,,,464c83f85a42f4e6d82c7e717ceac0ff,Sydney,1,0.37500000000000000000,0.37500000000000000000
+2019-04-08,2019-04-08,2019-04-01,2019,/JOB(project10)/JOBNUMBER(7547)/TASK(supervision),project10,7547,global-supervision,,supervision,,,,,,,6008900677b70e61c2a4170b2514aa5c,Sydney,3,2.0625000000000000,2.0625000000000000
+2019-04-08,2019-04-08,2019-04-01,2019,/JOB(project10)/JOBNUMBER(7547)/TASK(meeting),project10,7547,global-meeting,,meeting,,,,,,,a0c6885ed568a254679388eaa7fdfc2e,Sydney,1,0.06250000000000000000,0.06250000000000000000
+2019-04-08,2019-04-08,2019-04-01,2019,/JOB(project10)/JOBNUMBER(7547)/TASKLEVEL(department)/DEPT(rig)/TASK(td),project10,7547,global-dept,rig,td,,,,,,,a0c6885ed568a254679388eaa7fdfc2e,Sydney,2,0.56250000000000000000,0.56250000000000000000
+2019-04-08,2019-04-08,2019-04-01,2019,/JOB(project10)/JOBNUMBER(7547)/TASK(supervision),project10,7547,global-supervision,,supervision,,,,,,,a0c6885ed568a254679388eaa7fdfc2e,Sydney,2,0.56250000000000000000,0.56250000000000000000

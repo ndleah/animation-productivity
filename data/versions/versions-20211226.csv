@@ -1,0 +1,13 @@
+date,week,month,year,project,username,atype,vtype,assettype,reviewtype,pkgtype,scene,shot,eftype,state,count,bytes,size,intreviewed,dirreviewed
+2021-12-26,2021-12-20,2021-12-01,2021,project10,24b150da78bbc0b9ed48bc5a420a48ce,Asset,Master,shot,,,448bb,448bb_130,,,1,1362554666.0,1299 MB,,
+2021-12-26,2021-12-20,2021-12-01,2021,project10,24b150da78bbc0b9ed48bc5a420a48ce,Asset,Master,shot,,,448bb,448bb_130,,,1,2226585534.0,2123 MB,,
+2021-12-26,2021-12-20,2021-12-01,2021,project10,24b150da78bbc0b9ed48bc5a420a48ce,Asset,Master,shot,,,448bb,448bb_130,,,1,2226632588.0,2123 MB,,
+2021-12-26,2021-12-20,2021-12-01,2021,project10,24b150da78bbc0b9ed48bc5a420a48ce,Asset,Master,shot,,,448bb,448bb_130,,,1,5428582716.0,5177 MB,,
+2021-12-26,2021-12-20,2021-12-01,2021,project10,2b37e94b31061fcf1ff60181895281b0,Asset,Master,shot,fx,,zfx03,zfx03_fx_nightly_default,,,1,274896897.0,262 MB,,
+2021-12-26,2021-12-20,2021-12-01,2021,project10,2b37e94b31061fcf1ff60181895281b0,Asset,Master,shot,,,zfx03,zfx03_fx_nightly_default,,,1,921.0,921 bytes,,
+2021-12-26,2021-12-20,2021-12-01,2021,project10,2b37e94b31061fcf1ff60181895281b0,Asset,Master,shot,,,zfx03,zfx03_fx_nightly_default,,,1,406.0,406 bytes,,
+2021-12-26,2021-12-20,2021-12-01,2021,project10,2b37e94b31061fcf1ff60181895281b0,Asset,Master,shot,,,zfx03,zfx03_fx_nightly_default,,,1,2618101.0,2557 kB,,
+2021-12-26,2021-12-20,2021-12-01,2021,project10,2b37e94b31061fcf1ff60181895281b0,Asset,Master,shot,,,zfx03,zfx03_fx_nightly_default,,,1,1716236.0,1676 kB,,
+2021-12-26,2021-12-20,2021-12-01,2021,project10,2edfdd88d4b94047e75ed63d68200a78,Asset,Master,shot,layerpack,,mk015,mk015_005,,,1,6445725049.0,6147 MB,,
+2021-12-26,2021-12-20,2021-12-01,2021,project10,06f2583c4c136c45db30f0acdce01e31,Asset,Master,shot,layerpack,,mk013,mk013_004,,,1,11140182276.0,10 GB,,
+2021-12-26,2021-12-20,2021-12-01,2021,project10,e9390799903fc22266b560fd9ff4dcaa,Asset,Master,shot,layerpack,,343st,343st_080,,,2,65614810601.0,61 GB,,

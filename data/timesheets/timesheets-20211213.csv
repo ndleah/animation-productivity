@@ -1,0 +1,6 @@
+date,week,month,year,lpath,show,jobnumber,tasktype,dept,task,scene,shot,entitytype,entity,jiraproject,jiraissue,username,zone,entries,days_logged,days_signed_off
+2021-12-13,2021-12-13,2021-12-01,2021,/JOB(project10)/JOBNUMBER(7547)/TASK(supervision),project10,7547,global-supervision,,supervision,,,,,,,1761c93a546224dfcf10ff5a185edc16,Sydney,1,0.12500000000000000000,0.12500000000000000000
+2021-12-13,2021-12-13,2021-12-01,2021,/JOB(project10)/JOBNUMBER(7547m)/TASK(prod),project10,7547m,other,,prod,,,,,,,59fb32dde3b2c28f466d5d106366bb65,Vancouver,4,0.81250000000000000000,
+2021-12-13,2021-12-13,2021-12-01,2021,/JOB(project10)/JOBNUMBER(7547)/TASKLEVEL(dev)/JIRAPROJECT(perftd)/JIRAISSUE(perftd_4770),project10,7547,jira-issue,,,,,,,perftd,perftd_4770,b70c4aaa3d3818b61320eaaa0d8a1585,Sydney,4,0.81250000000000000000,0.81250000000000000000
+2021-12-13,2021-12-13,2021-12-01,2021,/JOB(project10)/JOBNUMBER(7547)/TASK(meeting),project10,7547,global-meeting,,meeting,,,,,,,b70c4aaa3d3818b61320eaaa0d8a1585,Sydney,3,0.18750000000000000000,0.18750000000000000000
+2021-12-13,2021-12-13,2021-12-01,2021,/JOB(project10)/JOBNUMBER(7547m)/TASK(prod),project10,7547m,other,,prod,,,,,,,f3127a115b99a482b12a4452d88b053d,Vancouver,1,0.25000000000000000000,0.25000000000000000000

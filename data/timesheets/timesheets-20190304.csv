@@ -1,0 +1,4 @@
+date,week,month,year,lpath,show,jobnumber,tasktype,dept,task,scene,shot,entitytype,entity,jiraproject,jiraissue,username,zone,entries,days_logged,days_signed_off
+2019-03-04,2019-03-04,2019-03-01,2019,/JOB(project10)/JOBNUMBER(7547)/TASK(supervision),project10,7547,global-supervision,,supervision,,,,,,,46c58872c03b99c0176ea35136ea2b2e,Sydney,2,1.1250000000000000,1.1250000000000000
+2019-03-04,2019-03-04,2019-03-01,2019,/JOB(project10)/JOBNUMBER(7547)/TASK(supervision),project10,7547,global-supervision,,supervision,,,,,,,bd1fce02d31c9a6bc7a5f0ef0f4a8df6,Sydney,1,0.25000000000000000000,0.25000000000000000000
+2019-03-04,2019-03-04,2019-03-01,2019,/JOB(project10)/JOBNUMBER(7547)/TASK(screening),project10,7547,global-screening,,screening,,,,,,,f878a0cfaee393e5d00e0f528de5a482,Sydney,1,0.25000000000000000000,0.25000000000000000000

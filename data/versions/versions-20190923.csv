@@ -1,0 +1,4 @@
+date,week,month,year,project,username,atype,vtype,assettype,reviewtype,pkgtype,scene,shot,eftype,state,count,bytes,size,intreviewed,dirreviewed
+2019-09-23,2019-09-23,2019-09-01,2019,project10,f949d59ad97ecc618f67e0581e8061fc,Asset,Master,shot,,,zcx01,zcx01_training08,,,3,7151457.0,6984 kB,,
+2019-09-23,2019-09-23,2019-09-01,2019,project10,f949d59ad97ecc618f67e0581e8061fc,Asset,Master,shot,,,zcx01,zcx01_training08,,,6,78175501.0,75 MB,,
+2019-09-23,2019-09-23,2019-09-01,2019,project10,ebc4c10102e48953557e11bc7ecb1afa,Asset,Master,global,,,,,,,1,30841423.0,29 MB,yes,

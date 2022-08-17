@@ -1,0 +1,4 @@
+date,week,month,year,lpath,show,jobnumber,tasktype,dept,task,scene,shot,entitytype,entity,jiraproject,jiraissue,username,zone,entries,days_logged,days_signed_off
+2019-08-05,2019-08-05,2019-08-01,2019,/JOB(project10)/JOBNUMBER(7547)/ENTITYTYPE(char)/ENTITY(superman_hub01)/DEPT(model)/TASK(model_blendshape),project10,7547,global-entity,model,model_blendshape,,,char,superman_hub01,,,4e5603d838c2c783299a594e375ecd35,Sydney,1,0.62500000000000000000,0.62500000000000000000
+2019-08-05,2019-08-05,2019-08-01,2019,/JOB(project10)/JOBNUMBER(7547)/TASK(prod),project10,7547,global-prod,,prod,,,,,,,59fb32dde3b2c28f466d5d106366bb65,Vancouver,1,0.12500000000000000000,0.12500000000000000000
+2019-08-05,2019-08-05,2019-08-01,2019,/JOB(project10)/JOBNUMBER(7547)/ENTITYTYPE(set)/ENTITY(supe_apt_int01)/DEPT(art)/TASK(art_concept),project10,7547,global-entity,art,art_concept,,,set,supe_apt_int01,,,ebc4c10102e48953557e11bc7ecb1afa,Sydney,2,1.00000000000000000000,1.00000000000000000000

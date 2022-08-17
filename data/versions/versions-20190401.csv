@@ -1,0 +1,4 @@
+date,week,month,year,project,username,atype,vtype,assettype,reviewtype,pkgtype,scene,shot,eftype,state,count,bytes,size,intreviewed,dirreviewed
+2019-04-01,2019-04-01,2019-04-01,2019,project10,a0c6885ed568a254679388eaa7fdfc2e,Asset,Master,global,,,,,,,3,32503696.0,31 MB,,
+2019-04-01,2019-04-01,2019-04-01,2019,project10,464c83f85a42f4e6d82c7e717ceac0ff,Asset,Master,shot,,,zts01,zts01_curlyxmas01,,,1,716.0,716 bytes,,
+2019-04-01,2019-04-01,2019-04-01,2019,project10,464c83f85a42f4e6d82c7e717ceac0ff,Asset,Master,shot,,,zts01,zts01_curlyxmas01,,,1,250.0,250 bytes,,

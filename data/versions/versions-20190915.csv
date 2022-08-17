@@ -1,0 +1,12 @@
+date,week,month,year,project,username,atype,vtype,assettype,reviewtype,pkgtype,scene,shot,eftype,state,count,bytes,size,intreviewed,dirreviewed
+2019-09-15,2019-09-09,2019-09-01,2019,project10,cd4a5779d3587962c31732e57122fe75,Asset,Master,global,,,,,,,1,539.0,539 bytes,,
+2019-09-15,2019-09-09,2019-09-01,2019,project10,cd4a5779d3587962c31732e57122fe75,Asset,Master,global,,,,,,,1,663.0,663 bytes,,
+2019-09-15,2019-09-09,2019-09-01,2019,project10,cd4a5779d3587962c31732e57122fe75,Asset,Master,global,,,,,,,1,628.0,628 bytes,,
+2019-09-15,2019-09-09,2019-09-01,2019,project10,cd4a5779d3587962c31732e57122fe75,Asset,Master,global,,,,,,,1,3554.0,3554 bytes,,
+2019-09-15,2019-09-09,2019-09-01,2019,project10,cd4a5779d3587962c31732e57122fe75,Asset,Master,global,,,,,,,1,1133543.0,1107 kB,,
+2019-09-15,2019-09-09,2019-09-01,2019,project10,cd4a5779d3587962c31732e57122fe75,Asset,Master,global,,,,,,,1,991947.0,969 kB,,
+2019-09-15,2019-09-09,2019-09-01,2019,project10,cd4a5779d3587962c31732e57122fe75,Asset,Master,global,,,,,,,1,991942.0,969 kB,,
+2019-09-15,2019-09-09,2019-09-01,2019,project10,cd4a5779d3587962c31732e57122fe75,Asset,Master,global,,,,,,,1,753486.0,736 kB,,
+2019-09-15,2019-09-09,2019-09-01,2019,project10,cd4a5779d3587962c31732e57122fe75,Asset,Master,global,,,,,,,1,991947.0,969 kB,,
+2019-09-15,2019-09-09,2019-09-01,2019,project10,cd4a5779d3587962c31732e57122fe75,Asset,Master,shot,entity,,zmt010,zmt010_cat_hat_adlt02,,,1,16838795.0,16 MB,,
+2019-09-15,2019-09-09,2019-09-01,2019,project10,cd4a5779d3587962c31732e57122fe75,Asset,Master,shot,modelling,,zmt010,zmt010_cat_hat_adlt02,,,1,16037697.0,15 MB,,
