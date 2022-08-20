@@ -1,8 +1,20 @@
-# Data Pipeline for Productivity
+![Star Badge](https://img.shields.io/static/v1?label=%F0%9F%8C%9F&message=If%20Useful&style=style=flat&color=BC4E99)
+![Open Source Love](https://badges.frapsoft.com/os/v1/open-source.svg?v=103)
+
+
+# Data Pipeline for Productivity <img src="http://pixelartmaker-data-78746291193.nyc3.digitaloceanspaces.com/image/96a034beedb086d.png" align="right" width="150" />
 
 > Group project assignment for the iLab2 subject - Spring 2022
 
-## :octocat: GitHub Structure
+## 👤 Authors
+
+* [Leah Nguyen](https://github.com/)
+* [Michelle Xiong](https://github.com/)
+* [William Mcdermott](https://github.com/)
+* [Mingpeng Wang](https://github.com/)
+
+
+## :octocat: GitHub Branch Structure
 
 ```
 .main/               <- Main branch
