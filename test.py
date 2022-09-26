@@ -30,6 +30,9 @@ df = pd.DataFrame(data, columns=["Date", "Dept", "Productivity", "Project"])
 
 ## Settings section
 with st.sidebar:
+
+    st.dataframe(df)
+    
     st.title("Data Settings")
 
     # Filter data by the customer's probability of churn 
