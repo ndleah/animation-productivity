@@ -33,7 +33,7 @@ def create_session_object():
 
    # Create Snowpark DataFrames that loads data from Knoema: Environmental Data Atlas
 def load_data(session):
-    productivity_df = session.table("PUBLIC.PRODUCTIVITY_TABLE")
+    productivity_df = session.table("PUBLIC.FINAL_PRODUCTIVITY_TABLE")
     
     # Convert Snowpark DataFrames to Pandas DataFrames for Streamlit
     productivity_df  = productivity_df.to_pandas()
@@ -42,6 +42,12 @@ def load_data(session):
     st.header("Knoema: Environment Data Atlas")
     st.subheader("Powered by Snowpark for Python and Snowflake Data Marketplace | Made with Streamlit")
     
+ # Display an interactive chart to visualize CO2 Emissions by Top N Countries
+    with st.container():
+        st.subheader('CO2 Emissions by Top N Countries')
+        with st.expander(""):
+            st.bar_chart(data=productivity_df.set_index('dept'), width=850, height=500, use_container_width=True)
+
 
 if __name__ == "__main__":
     session = create_session_object()
