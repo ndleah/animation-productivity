@@ -1,4 +1,4 @@
-FROM python:3.8.2
+FROM python:3.10.5
 
 EXPOSE 8501
 
@@ -6,7 +6,7 @@ WORKDIR /project
 
 COPY requirements.txt ./
 
-RUN pip install -r requirements.txt
+RUN pip3 install -r requirements.txt
 
 COPY . .
 
