@@ -40,3 +40,5 @@ vignettes/*.pdf
 
 # Avoid pushing any exceed dataset
 *.csv
+
+.streamlit/secrets.toml
