@@ -1,0 +1,356 @@
+--USE WAREHOUSE COMPUTE_WH;
+--SELECT CURRENT_WAREHOUSE();
+
+CREATE DATABASE ilab_database;
+USE DATABASE ilab_database;
+
+--drop DATABASE ilab_database;
+Create schema raw;
+Use ilab_database.raw;
+
+CREATE STORAGE INTEGRATION ilab_storage_Int
+  TYPE = EXTERNAL_STAGE
+  STORAGE_PROVIDER = AZURE
+  ENABLED = TRUE
+  AZURE_TENANT_ID = ''
+  STORAGE_ALLOWED_LOCATIONS = ('');
+
+--DROP STORAGE INTEGRATION ilab_storage_Int;
+DESC STORAGE INTEGRATION ilab_storage_Int; 
+--DESCRIBE INTEGRATION ilab_storage_Int;
+
+CREATE OR REPLACE STAGE stage_ilab2
+STORAGE_INTEGRATION = ilab_storage_Int
+URL='';
+
+--drop stage stage_ilab2;
+list @stage_ilab2;
+
+-- Create a file format for CSV
+CREATE OR REPLACE FILE FORMAT file_format_csv 
+TYPE = 'CSV' 
+FIELD_DELIMITER = ',' 
+SKIP_HEADER = 1
+NULL_IF = ('\\N', 'NULL', 'NUL', '')
+FIELD_OPTIONALLY_ENCLOSED_BY = '"';
+
+-------------------------------------- External Table ---------------------------------
+-- create external table for timesheets data.
+CREATE OR REPLACE EXTERNAL TABLE raw.timesheets
+with location = @stage_ilab2 
+file_format = file_format_csv
+pattern = 'timesheets.*.csv';
+
+-- create external table for versions data.
+CREATE OR REPLACE EXTERNAL TABLE raw.versions
+with location = @stage_ilab2 
+file_format = file_format_csv
+pattern = 'versions.*.csv';
+
+-- create external table for crew data.
+CREATE OR REPLACE EXTERNAL TABLE raw.crew
+with location = @stage_ilab2 
+file_format = file_format_csv
+pattern = 'crew.csv';
+
+-- create external table for dept-dept data.
+CREATE OR REPLACE EXTERNAL TABLE raw.deptdept
+with location = @stage_ilab2 
+file_format = file_format_csv
+pattern = 'dept-dept.csv';
+
+-- create external table for depts data.
+CREATE OR REPLACE EXTERNAL TABLE raw.depts
+with location = @stage_ilab2 
+file_format = file_format_csv
+pattern = 'depts.csv';
+
+-- create external table for rtypes data.
+CREATE OR REPLACE EXTERNAL TABLE raw.rtypes
+with location = @stage_ilab2 
+file_format = file_format_csv
+pattern = 'rtypes.csv';
+
+-- create external table for shot-types data.
+CREATE OR REPLACE EXTERNAL TABLE raw.shot_types
+with location = @stage_ilab2 
+file_format = file_format_csv
+pattern = 'shot-types.csv';
+
+-- create external table for shows data.
+CREATE OR REPLACE EXTERNAL TABLE raw.shows
+with location = @stage_ilab2 
+file_format = file_format_csv
+pattern = 'shows.csv';
+
+--Examing external table
+select *
+from timesheets
+limit 5;
+
+--Create Staging, datawarehouse and datamart
+Create schema staging;
+create schema datawarehouse;
+create schema datamart;
+
+-------------------------------------- Staging Table ---------------------------------
+-- Create staging tables with correct data type for timesheets
+CREATE OR REPLACE TABLE staging.timesheets as
+(select 
+    value:c1::date as date
+    , value:c2::date as week
+    , value:c3::date as month
+    , value:c4::int as year
+    , value:c5::varchar as lpath
+    , value:c6::varchar as show
+    , value:c7::varchar as jobnumber
+    , value:c8::varchar as tasktype
+    , value:c9::varchar as dept
+    , value:c10::varchar as task
+    , value:c11::varchar as scene
+    , value:c12::varchar as shot
+    , value:c13::varchar as entitytype
+    , value:c14::varchar as entity
+    , value:c15::varchar as jiraproject
+    , value:c16::varchar as jiraissue
+    , value:c17::varchar as username
+    , value:c18::varchar as zone
+    , value:c19::int as entries
+    , value:c20::decimal(12,2) as days_logged
+    , value:c21::decimal(12,2) as days_signed_off
+from raw.timesheets);
+
+select * 
+from staging.timesheets
+limit 10
+
+-- create staging tables with correct data type for versions
+CREATE OR REPLACE TABLE staging.versions as
+(select 
+    value:c1::date as date
+    , value:c2::date as week
+    , value:c3::date as month
+    , value:c4::int as year
+    , value:c5::varchar as project
+    , value:c6::varchar as username
+    , value:c7::varchar as atype
+    , value:c8::varchar as vtype
+    , value:c9::varchar as assettype
+    , value:c10::varchar as reviewtype
+    , value:c11::varchar as pkgtype
+    , value:c12::varchar as scene
+    , value:c13::varchar as shot
+    , value:c14::varchar as eftype
+    , value:c15::varchar as state
+    , value:c16::int as count
+    , value:c17::int as bytes
+    , value:c18::varchar as size
+    , value:c19::varchar as intreviewed
+    , value:c20::varchar as dirreviewed
+from raw.versions);
+
+-- Create staging tables with correct data type for crew
+CREATE OR REPLACE TABLE staging.crew as
+(select 
+    value:c1::varchar as username
+    , value:c2::varchar as type
+from raw.crew);
+
+-- create staging tables with correct data type for deptdept
+CREATE OR REPLACE TABLE staging.deptdept as
+(select 
+    value:c1::varchar as dept
+    , value:c2::varchar as department
+from raw.deptdept);
+
+-- create staging tables with correct data type for depts
+CREATE OR REPLACE TABLE staging.depts as
+(select 
+    value:c1::varchar as department
+    , value:c2::varchar as name
+from raw.depts);
+
+-- create staging tables with correct data type for rtypes
+CREATE OR REPLACE TABLE staging.rtypes as
+(select 
+    value:c1::varchar as rtype
+    , value:c2::varchar as dept
+    , value:c3::varchar as type
+from raw.rtypes);
+
+-- create staging tables with correct data type for shot_types
+CREATE OR REPLACE TABLE staging.shot_types as
+(select 
+    value:c1::varchar as Shot_Type
+from raw.shot_types);
+
+-- create staging tables with correct data type for shows
+CREATE OR REPLACE TABLE staging.shows as
+(select 
+    value:c1::varchar as shortname
+    , value:c2::varchar as title
+    , value:c3::varchar as end
+    , value:c4::varchar as refweek
+from raw.shows);
+
+-------------------------------------- data warehouse ---------------------------------
+--Data Cleaning and transforming, create data warehouse
+-- CREATE datawarehouse.versions_mod with enriched data 
+CREATE OR REPLACE TABLE datawarehouse.versions_mod as
+SELECT v.*
+    , r.type as review_type
+    , dn.department as department_name
+    , c.type as crew_type
+    , case when dirreviewed = 'yes' then 'Director Reviewed'
+           when intreviewed = 'yes' then 'Internal Reviewed'
+           else 'Surplus Reviewed'
+           end as review_Category
+FROM staging.versions as v
+left join staging.rtypes as r
+    on v.reviewtype = r.rtype --# 1. add dept and type based on reviewtype
+left join staging.deptdept as d
+    on r.dept = d.dept --# 2. add department
+left join staging.depts as dn
+    on d.department = dn.department --# 3. add department full name
+left join staging.crew as c
+    on v.username = c.username --# 4. add employee type
+;
+
+SELECT count(*)
+FROM staging.versions;
+
+SELECT count(*)
+FROM datawarehouse.versions_mod;
+
+-- CREATE datawarehouse.timesheets_mod with enriched data 
+CREATE OR REPLACE TABLE datawarehouse.timesheets_mod as
+SELECT t.*
+    , c.type as crew_type
+    , dn.department as department_name
+FROM staging.timesheets as t
+left join staging.crew as c
+    on t.username = c.username --# 1. add employee type
+left join staging.deptdept as d
+    on t.dept = d.dept --# 2. add department
+left join staging.depts as dn
+    on d.department = dn.department --# 3. add department full name
+;
+
+SELECT count(*)
+FROM staging.timesheets;
+
+SELECT count(*)
+FROM datawarehouse.timesheets_mod;
+
+-------------------------------------- EDA ---------------------------------
+select review_category,
+       count(*)
+from datawarehouse.versions_mod
+group by 1;
+
+-------------------------------------- data mart ---------------------------------
+--Calculate Weekly outcome (Count of Verions), by Department, using weighting 
+CREATE OR REPLACE TABLE datamart.weekly_output as
+with Week_agg_data as (
+select week,
+       Department_Name,
+       sum(count) AS count_of_version, 
+       sum(case when review_Category = 'Director Reviewed' then count*1
+           when review_Category = 'Internal Reviewed' then count*0.75
+           else count*0.01
+           end) as weighted_output
+from datawarehouse.versions_mod
+group by 1, 2
+)
+select week,
+       Department_Name,
+       count_of_version,
+       weighted_output,
+       avg(weighted_output) OVER (
+        PARTITION BY Department_Name
+        ORDER BY week
+        ROWS BETWEEN
+          2 PRECEDING AND
+          CURRENT ROW
+      ) AS weighted_output_moving_average
+from Week_agg_data
+where Department_Name is not null
+order by 2, 1;
+
+--Calculate Weekly Human Effort (sum of logged time), by Department
+CREATE OR REPLACE TABLE datamart.weekly_human_effort as
+with Week_agg_data as (
+select week,
+       Department_Name,
+       sum(days_logged) AS days_logged,
+       sum(days_signed_off) AS days_signed_off
+from datawarehouse.timesheets_mod
+group by 1, 2
+)
+select week,
+       Department_Name,
+       days_logged,
+       days_signed_off,
+       avg(days_logged) OVER (
+        PARTITION BY Department_Name
+        ORDER BY week
+        ROWS BETWEEN
+          2 PRECEDING AND
+          CURRENT ROW
+      ) AS days_logged_moving_average,
+       avg(days_signed_off) OVER (
+        PARTITION BY Department_Name
+        ORDER BY week
+        ROWS BETWEEN
+          2 PRECEDING AND
+          CURRENT ROW
+      ) AS days_signed_off_moving_average
+from Week_agg_data
+where Department_Name is not null
+order by 2, 1;
+  
+-- Combine Human effort and Output
+CREATE OR REPLACE TABLE datamart.Combined_data as
+with Combined_data as ( 
+select coalesce(o.week, i.week) as week,
+       coalesce(o.Department_Name, i.Department_Name) as Department,
+       o.weighted_output,
+       i.days_logged
+from datamart.weekly_output as o
+full join datamart.weekly_human_effort as i
+on o.week = i.week
+and o.Department_Name = i.Department_Name
+),
+Mod_data as (
+select c.*,
+       last_value(weighted_output) IGNORE NULLS over(
+           PARTITION BY Department
+           ORDER BY week
+           ROWS BETWEEN UNBOUNDED PRECEDING AND CURRENT ROW
+       ) AS weighted_output_mod,
+       last_value(days_logged) IGNORE NULLS over(
+           PARTITION BY Department
+           ORDER BY week
+           ROWS BETWEEN UNBOUNDED PRECEDING AND CURRENT ROW
+       ) AS days_logged_mod
+from Combined_data as c
+)
+select m.*,
+       avg(weighted_output_mod) OVER (
+        PARTITION BY Department
+        ORDER BY week
+        ROWS BETWEEN
+          2 PRECEDING AND
+          CURRENT ROW
+      ) AS weighted_output_moving_average,
+       avg(days_logged_mod) OVER (
+        PARTITION BY Department
+        ORDER BY week
+        ROWS BETWEEN
+          2 PRECEDING AND
+          CURRENT ROW
+      ) AS days_logged_mod_moving_average,
+      weighted_output_moving_average/days_logged_mod_moving_average as Human_Efficiency
+from Mod_data as m
+order by Department, week
+;
