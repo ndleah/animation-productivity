@@ -45,3 +45,4 @@ vignettes/*.pdf
 
 */_pycache__/
 *.pyc
+utils/__pycache__/
