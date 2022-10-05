@@ -1,3 +1,4 @@
+import secrets
 import sys
 import snowflake.connector
 import streamlit as st
@@ -6,14 +7,7 @@ import os
 
 @st.experimental_singleton
 def init_connection():
-  return snowflake.connector.connect(
-    user = 'NDLEAH',
-    password = 'Anhmeu@123',
-    account = 'YX47125.australia-east.azure',
-    warehouse = 'COMPUTE_WH',
-    database = 'ILAB_DATABASE',
-    schema = 'DATAMART'
-    )
+  return snowflake.connector.connect(**st.secrets["snowflake"])
   
 conn = init_connection()
 
