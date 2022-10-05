@@ -16,7 +16,7 @@
 # Import required libraries
 import streamlit as st
 import pandas as pd
-
+import sys
 from utils import chart, db
 import logging
 
@@ -48,12 +48,17 @@ def run():
 
   # Create dataframe of features and predictions
   df = pd.DataFrame(db.data, columns=["WEEK", "DEPARTMENT", "WEIGHTED_OUTPUT", "DAYS_LOGGED", "WEIGHTED_OUTPUT_MOD", "DAYS_LOGGED_MOD", "WEIGHTED_OUTPUT_MOVING_AVERAGE", "DAYS_LOGGED_MOD_MOVING_AVERAGE", "HUMAN_EFFICIENCY"])
+  
+  # Filter by State
+  department = st.multiselect("Select departments", df['DEPARTMENT'].unique(), default=df['DEPARTMENT'].unique())
+  # department = st.multiselect("Select project", df['project'].unique(), default=df['project'].unique())
+  
   chart_display = chart.get_chart(df)
+  st.altair_chart(chart_display, use_container_width=True)
 
   st.title("Data Settings")
 
-  # Filter by State
-  department = st.multiselect("Select departments", df['DEPARTMENT'].unique(), default=df['DEPARTMENT'].unique())
+  
 
 if __name__ == "__main__":
     run()

@@ -3,7 +3,7 @@ import altair as alt
 
 def get_chart(data):
     hover = alt.selection_single(
-        fields=["week"],
+        fields=["date"],
         nearest=True,
         on="mouseover",
         empty="none",
@@ -13,10 +13,10 @@ def get_chart(data):
         alt.Chart(data, title="Human Efficiency by Departments")
         .mark_line()
         .encode(
-            x="week",
-            y="human_efficiency",
-            color="department",
-            strokeDash="department",
+            x="WEEK",
+            y="HUMAN_EFFICIENCY",
+            color="DEPARTMENT",
+            strokeDash="DEPARTMENT",
         )
     )
 
@@ -28,12 +28,12 @@ def get_chart(data):
         alt.Chart(data)
         .mark_rule()
         .encode(
-            x="week",
-            y="human_efficiency",
+            x="WEEK",
+            y="HUMAN_EFFICIENCY",
             opacity=alt.condition(hover, alt.value(0.3), alt.value(0)),
             tooltip=[
-                alt.Tooltip("week", title="Date"),
-                alt.Tooltip("human_efficiency", title="Price (USD)"),
+                alt.Tooltip("WEEK", title="Date"),
+                alt.Tooltip("HUMAN_EFFICIENCY", title="Price (USD)"),
             ],
         )
         .add_selection(hover)

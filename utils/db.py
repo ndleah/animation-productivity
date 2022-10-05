@@ -1,16 +1,18 @@
+import sys
 import snowflake.connector
 import streamlit as st
 import os
-from db import user, password, account, warehouse, database, schema
+# from constant import user, password, account, warehouse, database, schema
 
 @st.experimental_singleton
 def init_connection():
   return snowflake.connector.connect(
-    password = password,
-    account = account,
-    warehouse = warehouse,
-    database = database,
-    schema = schema,
+    user = 'NDLEAH',
+    password = 'Anhmeu@123',
+    account = 'YX47125.australia-east.azure',
+    warehouse = 'COMPUTE_WH',
+    database = 'ILAB_DATABASE',
+    schema = 'DATAMART'
     )
   
 conn = init_connection()
