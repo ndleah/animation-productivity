@@ -42,3 +42,7 @@ vignettes/*.pdf
 *.csv
 
 .streamlit/secrets.toml
+
+*/_pycache__/
+*.pyc
+utils/__pycache__/
