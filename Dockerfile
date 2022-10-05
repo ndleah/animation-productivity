@@ -12,7 +12,7 @@ COPY . .
 
 ENV PYTHONPATH "${PYTHONPATH}:/project"
 
-CMD ["streamlit", "run", "app/streamlit_app.py"]
+CMD ["streamlit", "run", "home.py"]
 
 # docker build -t streamlitapp:latest .
 # docker run -p 8501:8501 -e PYTHONPATH="${PYTHONPATH}:/project" -it streamlitapp:latest

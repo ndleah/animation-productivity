@@ -1,0 +1,18 @@
+steps:
+ - uses: actions/checkout@v2
+ - name: Set up Python
+   uses: actions/setup-python@v1
+   with:
+     python-version: "3.6"
+   - name: Install dependencies
+   run: |
+     ...
+ - name: Build and publish
+   env: # Set the secret as an input
+    user: ${{ secrets.USER }}
+    password: ${{ secrets.PASSWORD }}
+    datawarehouse: ${{ secrets.DATAWAREHOUSE }}
+    database: ${{ secrets.DATABASE}}
+    schema: ${{ secrets.SCHEMA }}
+   run: |
+    pipenv run streamlit run home.py
