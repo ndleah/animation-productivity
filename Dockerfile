@@ -1,18 +1,17 @@
-FROM python:3.10.5
+FROM python:3.9-slim
 
-EXPOSE 8501
+EXPOSE 8502
 
 WORKDIR /project
 
-COPY requirements.txt ./
+RUN apt-get update && apt-get install -y \
+    build-essential \
+    software-properties-common \
+    git \
+    && rm -rf /var/lib/apt/lists/*
+
+RUN git clone https://github.com/streamlit/streamlit-example.git .
 
 RUN pip3 install -r requirements.txt
 
-COPY . .
-
-ENV PYTHONPATH "${PYTHONPATH}:/project"
-
-CMD ["streamlit", "run", "home.py"]
-
-# docker build -t streamlitapp:latest .
-# docker run -p 8501:8501 -e PYTHONPATH="${PYTHONPATH}:/project" -it streamlitapp:latest
+ENTRYPOINT ["streamlit", "run", "home.py", "--server.port=8502", "--server.address=0.0.0.0"]
