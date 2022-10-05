@@ -1,4 +1,0 @@
-date,week,month,year,lpath,show,jobnumber,tasktype,dept,task,scene,shot,entitytype,entity,jiraproject,jiraissue,username,zone,entries,days_logged,days_signed_off
-2019-10-07,2019-10-07,2019-10-01,2019,/JOB(project10)/JOBNUMBER(7547)/TASK(supervision),project10,7547,global-supervision,,supervision,,,,,,,0d0de813c1105498e3435dd2fbf7fa26,Vancouver,1,0.18750000000000000000,0.18750000000000000000
-2019-10-07,2019-10-07,2019-10-01,2019,/JOB(project10)/JOBNUMBER(7547)/TASK(prod),project10,7547,global-prod,,prod,,,,,,,59fb32dde3b2c28f466d5d106366bb65,Vancouver,1,0.12500000000000000000,
-2019-10-07,2019-10-07,2019-10-01,2019,/JOB(project10)/JOBNUMBER(7547)/TASKLEVEL(department)/DEPT(charfx)/TASK(td),project10,7547,global-dept,charfx,td,,,,,,,9c99ede516ca53eb131996cac1e359f0,Sydney,2,1.00000000000000000000,1.00000000000000000000
