@@ -2,7 +2,7 @@
 import sys
 import streamlit as st
 
-def run():
+def document_page():
   st.markdown(
           """
           Streamlit is an open-source app framework built specifically for
@@ -21,5 +21,10 @@ def run():
       """
       )
 
-if __name__ == "__main__":
-    run()
+  st.write(
+      """This demo illustrates a combination of plotting and animation with
+  Streamlit. We're generating a bunch of random numbers in a loop for around
+  5 seconds. Enjoy!"""
+  )
+
+document_page()

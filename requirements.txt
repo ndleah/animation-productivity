@@ -4,4 +4,4 @@ pandas==1.4.0
 numpy==1.22.2
 matplotlib==3.5.1
 snowflake
-streamlit
+streamlit==1.4

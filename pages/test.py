@@ -14,10 +14,9 @@
 
 
 # Import required libraries
-import sys
 import streamlit as st
 
-def run():
+def sub_page():
   st.markdown(
           """
           Streamlit is an open-source app framework built specifically for
@@ -36,5 +35,4 @@ def run():
       """
       )
 
-if __name__ == "__main__":
-    run()
+sub_page()
