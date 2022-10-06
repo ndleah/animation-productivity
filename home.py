@@ -62,8 +62,5 @@ def main():
 
     st.title("Data Settings")
 
-    # Mandatory to avoid rollbacks with widgets, must be called at the end of your app
-    state.sync()
-
 if __name__ == "__main__":
   main()
