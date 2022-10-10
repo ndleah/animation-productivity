@@ -1,6 +1,0 @@
-date,week,month,year,lpath,show,jobnumber,tasktype,dept,task,scene,shot,entitytype,entity,jiraproject,jiraissue,username,zone,entries,days_logged,days_signed_off
-2020-10-04,2020-09-28,2020-09-01,2020,/JOB(project10)/JOBNUMBER(7547)/TASK(prod),project10,7547,global-prod,,prod,,,,,,,375b975bbd0cb99642fa772132b0dc23,Vancouver,1,0.50000000000000000000,0.50000000000000000000
-2020-10-04,2020-09-28,2020-09-01,2020,/JOB(project10)/JOBNUMBER(7547)/TASK(prod),project10,7547,global-prod,,prod,,,,,,,468901f671f15db3f19398b4cb1c3801,Vancouver,2,0.56250000000000000000,0.56250000000000000000
-2020-10-04,2020-09-28,2020-09-01,2020,/JOB(project10)/JOBNUMBER(7547)/SCENE(095dd)/SHOT(095dd_450)/DEPT(anim)/TASK(anim_blocking),project10,7547,shot,anim,anim_blocking,095dd,095dd_450,,,,,5930d2f67d427c68c1e248e3f2bf76e0,Vancouver,1,0.50000000000000000000,0.50000000000000000000
-2020-10-04,2020-09-28,2020-09-01,2020,/JOB(project10)/JOBNUMBER(7547)/TASK(supervision),project10,7547,global-supervision,,supervision,,,,,,,6c602733f386c9115b342ac71103c75f,Vancouver,2,0.87500000000000000000,0.87500000000000000000
-2020-10-04,2020-09-28,2020-09-01,2020,/JOB(project10)/JOBNUMBER(7547)/TASK(prod),project10,7547,global-prod,,prod,,,,,,,9381a3dbd6cb021895e14bb3388d8d09,Vancouver,1,0.31250000000000000000,0.31250000000000000000

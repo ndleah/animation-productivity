@@ -1,6 +1,6 @@
 ![Star Badge](https://img.shields.io/static/v1?label=%F0%9F%8C%9F&message=If%20Useful&style=style=flat&color=BC4E99)
 ![Open Source Love](https://badges.frapsoft.com/os/v1/open-source.svg?v=103)
-
+[![Open in Streamlit](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)]()
 
 # Data Pipeline for Productivity <img src="http://pixelartmaker-data-78746291193.nyc3.digitaloceanspaces.com/image/96a034beedb086d.png" align="right" width="150" />
 
@@ -27,6 +27,9 @@
 │
 ├── mingpeng/        <- Mingpeng's branch
 ```
+
+## Framework
+![framework](framework.png)
 
 ## ⚙️ Setup Instruction
 
@@ -107,3 +110,36 @@ Steps need to take:
 > 4. Click on “Send Pull Request”
 
 </details> 
+
+## ⚙️ Instructions
+
+Clone the repository
+
+```bash
+git clone https://github.com/ndleah/AL-data-pipeline.git
+cd AL-data-pipeline
+```
+
+Run the Docker container with docker compose
+
+```bash
+docker-compose up -d --build
+```
+
+The container will start in detached mode and can now be accessed via [http://localhost:8501](http://localhost:8501). 
+
+Whenever you change the app/streamlit_app.py the steamlit application will update too. If you want to build upon that example, just add your dependencies to the Dockerfile and rebuild the image using docker-compose.
+
+After you are done, and you want to tear down the application, either
+
+```bash
+docker-compose stop
+```
+
+to stop the application, or use 
+
+```bash
+docker-compose down --rmi all
+```
+
+to stop the application, remove the stopped containers and optionally `--rmi all` / remove all images associated in the docker-compose.yml file.

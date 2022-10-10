@@ -1,6 +1,0 @@
-date,week,month,year,lpath,show,jobnumber,tasktype,dept,task,scene,shot,entitytype,entity,jiraproject,jiraissue,username,zone,entries,days_logged,days_signed_off
-2019-07-29,2019-07-29,2019-07-01,2019,/JOB(project10)/JOBNUMBER(7547)/TASK(training),project10,7547,global-training,,training,,,,,,,6008900677b70e61c2a4170b2514aa5c,Vancouver,1,1.1250000000000000,1.1250000000000000
-2019-07-29,2019-07-29,2019-07-01,2019,/JOB(project10)/JOBNUMBER(7547)/TASKLEVEL(department)/DEPT(art)/TASK(art),project10,7547,global-dept,art,art,,,,,,,8ec6dbb2bb58ef90bec34b32f700416c,Sydney,1,1.0625000000000000,1.0625000000000000
-2019-07-29,2019-07-29,2019-07-01,2019,/JOB(project10)/JOBNUMBER(7547)/TASK(supervision),project10,7547,global-supervision,,supervision,,,,,,,a0c6885ed568a254679388eaa7fdfc2e,Sydney,1,0.12500000000000000000,0.12500000000000000000
-2019-07-29,2019-07-29,2019-07-01,2019,/JOB(project10)/JOBNUMBER(7547)/TASK(supervision),project10,7547,global-supervision,,supervision,,,,,,,b93c1511c9573c56f4a75700689dce49,Sydney,1,1.00000000000000000000,1.00000000000000000000
-2019-07-29,2019-07-29,2019-07-01,2019,/JOB(project10)/JOBNUMBER(7547)/ENTITYTYPE(set)/ENTITY(hub_supe_apt_int01)/DEPT(art)/TASK(art_concept),project10,7547,global-entity,art,art_concept,,,set,hub_supe_apt_int01,,,ebc4c10102e48953557e11bc7ecb1afa,Sydney,2,1.00000000000000000000,1.00000000000000000000
