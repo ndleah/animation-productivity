@@ -1,8 +1,0 @@
-date,week,month,year,lpath,show,jobnumber,tasktype,dept,task,scene,shot,entitytype,entity,jiraproject,jiraissue,username,zone,entries,days_logged,days_signed_off
-2022-01-30,2022-01-24,2022-01-01,2022,/JOB(project10)/JOBNUMBER(7547)/TASK(supervision),project10,7547,global-supervision,,supervision,,,,,,,0d0de813c1105498e3435dd2fbf7fa26,Vancouver,1,0.12500000000000000000,0.12500000000000000000
-2022-01-30,2022-01-24,2022-01-01,2022,/JOB(project10)/JOBNUMBER(7547)/TASK(supervision),project10,7547,global-supervision,,supervision,,,,,,,24b150da78bbc0b9ed48bc5a420a48ce,Vancouver,2,1.2500000000000000,1.2500000000000000
-2022-01-30,2022-01-24,2022-01-01,2022,/JOB(project10)/JOBNUMBER(7547)/TASK(supervision),project10,7547,global-supervision,,supervision,,,,,,,2edfdd88d4b94047e75ed63d68200a78,Vancouver,2,1.2500000000000000,1.2500000000000000
-2022-01-30,2022-01-24,2022-01-01,2022,/JOB(project10)/JOBNUMBER(7547m)/SCENE(mk015)/SHOT(mk015_003)/DEPT(comp)/TASK(comp),project10,7547m,other,comp,comp,mk015,mk015_003,,,,,537bd2e380fe474f8f16078e24a30530,Vancouver,1,1.00000000000000000000,1.00000000000000000000
-2022-01-30,2022-01-24,2022-01-01,2022,/JOB(project10)/JOBNUMBER(7547)/TASK(prod),project10,7547,global-prod,,prod,,,,,,,8729d293a70ba256044349c34fadf76f,Vancouver,4,0.40625000000000000000,0.40625000000000000000
-2022-01-30,2022-01-24,2022-01-01,2022,/JOB(project10)/JOBNUMBER(7547)/TASK(di),project10,7547,global-dept,,di,,,,,,,ee3ebc9b53dc9e8265ee8307dac3973f,Vancouver,1,1.00000000000000000000,1.00000000000000000000
-2022-01-30,2022-01-24,2022-01-01,2022,/JOB(project10)/JOBNUMBER(7547)/TASK(supervision),project10,7547,global-supervision,,supervision,,,,,,,f14e818088059b87aaf4c1d614146295,Vancouver,1,1.00000000000000000000,1.00000000000000000000

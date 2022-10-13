@@ -13,103 +13,43 @@
 * [William Mcdermott](https://github.com/)
 * [Mingpeng Wang](https://github.com/)
 
+## Folder Structure
 
-## :octocat: GitHub Branch Structure
-
-```
-.main/               <- Main branch
+```bash
+./AL-data-pipeline
+├── .github/
+│   └── pull_request_template.md
 │
-├── will/            <- Will's branch
+├── .streamlit/
+│   ├── config.toml
+│   └── secrets.toml
 │
-├── leah/            <- Leah's branch
+├── archieve/
+│   ├── AL-data-pipeline.Rproj
+│   ├── EDA.ipynb
+│   ├── Overheads.R
+│   ├── combine_data_leah.R
+│   ├── eda_leah.R
+│   └── snowflake code - upload.txt
 │
-├── michelle/        <- Michelle's branch
+├── img/
+│   ├── Animal_Logic_logo.png
+│   └── framework.png
 │
-├── mingpeng/        <- Mingpeng's branch
+├── utils/
+│   ├── chart.py
+│   └── db.py
+│
+├── .gitignore
+├── Dockerfile
+├── README.md
+├── home.py
+└── requirements.txt
 ```
 
-## Framework
-![framework](framework.png)
+## Application Framework
 
-## ⚙️ Setup Instruction
-
-<details>
-<summary>
-Step 1: Clone the repository. 
-</summary>
-
-Open git bash and type:
-
-```bash
-git clone https://github.com/ndleah/credit-card.git
-```
-
-> This makes a local copy of the repository in your machine.
-
-</details> 
-
----
-
-<details>
-<summary>
-Step 2: Switch to your branch
-</summary>
-
-```bash
-git checkout branch_name    <--- Switching the branch
-```
-
-For example
-
-```bash
-git checkout akshaya        <--- Switching the branch
-```
-
-</details> 
-
----
-
-<details>
-<summary>
-Step 3: Ready, Set, Go...
-</summary>
-
-**Commit your changes locally**
-
-```bash
-git commit -m "description of your commit".
-```
-
-**Upload the changes (including your new branch) to GitHub**
-
-```bash
-git push origin MyNewBranch
-```
-
-For example
-
-```bash
-git push origin akshaya
-```
-</details> 
-
----
-
-<details>
-<summary>
-Step 4: Pull Requests
-</summary>
-
-Once you have completed these steps, you are ready to start contributing to the project and creating **pull requests**.
-
-Steps need to take:
-
-> 1. Go to the main repo on GitHub where you should now see your new branch
-> 2. Click on your branch name
-> 3. click on “Pull Request” button (URC)
-> 4. Click on “Send Pull Request”
-
-</details> 
+![framework](img/framework.png)
 
 ## ⚙️ Instructions
 
@@ -136,10 +76,16 @@ After you are done, and you want to tear down the application, either
 docker-compose stop
 ```
 
-to stop the application, or use 
 
-```bash
-docker-compose down --rmi all
-```
+## 📝 Metrics Description
+### 🚀 Productivity:
+* **Total Review Value:** The weighted value of reviews from submitted work. A Director review has a value of 1, internal review has a value of 0.75, and automated reviews have a vlue of 0.05.
+* **File Size Change:** The change in the file size from the last recorded entry. This approximates the magnitude of the work completed.
+* **Total File Size:** The total size of the file submitted. This approximates the work completed and the complexity of its context.
+* **Normalised Productivity:** This take the *File Size Chnage* and normalises by the peak productivity over the project ( % peak peak productivity). This should only be used after completion of the project.
 
-to stop the application, remove the stopped containers and optionally `--rmi all` / remove all images associated in the docker-compose.yml file.
+### 👤 Overheads:
+* **Overhead Hours:** Hours submitted with tasks: `td`,`meeting`,`prod`,``training`, or `supervision`. These indicate human hours with no direct value added to this project.
+* **Productive Hours:** Hours submitted that are not *Overhead Hours*
+* **Overheads per Productive Hour:** The number of *Overhead ours per Productive Hour*. This may identify inefficiencies where Overheads are high when not justified in business context.
+
