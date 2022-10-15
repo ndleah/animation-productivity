@@ -4,54 +4,80 @@
 
 # Data Pipeline for Productivity <img src="http://pixelartmaker-data-78746291193.nyc3.digitaloceanspaces.com/image/96a034beedb086d.png" align="right" width="150" />
 
-> Group project assignment for the iLab2 subject - Spring 2022
+> Group project for the iLab2 subject - Spring 2022
 
-## 👤 Authors
+## 🎥 Demo
+![demo](img/demo.gif)
 
-* [Leah Nguyen](https://github.com/)
-* [Michelle Xiong](https://github.com/)
-* [William Mcdermott](https://github.com/)
-* [Mingpeng Wang](https://github.com/)
+## 👤 Client Description
+
+Our client, Animal Logic is an animation company with multiple awards in the animation and film industry. It has been recognised as one of the world's leading creative animation and visual effect digital studios, producing award-winning design, visual effects and animation for over 30 years.
+
+ <br>
+
+**Problem Statement:**
+> With at least hundreds of thousands of frames in every finished animation film product, which requires hundreds of people working together for years, the coordination and efficient flow of information and data are critical to the client's business success.
+</br>
+
+## 🎯 Goal 
+* Evaluating and developing new productivity metrics for a partner in a niche industry. 
+* Proposing a pipeline to simplify and possibly automate the analysis and presentation of the analysis to these stakeholders was therefore a secondary goal. 
+
+## 📝 Metrics Description
+
+To achieve a holistic view of the productivity, our group created several metrics that approximate a variety of different concepts we think are important to understanding the data in its context: 
+* **Overhead Hours:** The Total Hours with the task description: td, prod, supervision, meeting, training, di, or NULL. This should represent the number of hours spent not producing direct value. 
+* **Productive Hours:** Total Hours – Overhead Hours. This should represent the hours that directly produce value. 
+* **Overheads Per Productive Hour:** Overhead Hours / Productive Hours. This should represent the number of hours spent on tasks with indirect value for every immediately productive hour. 
+* **Artists:** The total artists assigned tasks on this project during the date range displayed. This should approximate the overall workload assigned to a department. 
+Count Productivity: The total number of submissions for review within a date range / Total Hours. This should approximate the total task load of a department. 
+* **File size Productivity:** The total file size of all assets submitted for review / Total Hours. This should approximate workload including complexity. 
+* **Review Productivity:** The weighted value of assets submitted for review / Total Hours. Director review = 1, Internal review = 0.75, Surplus review = 0.01. This should approximate the direct importance of the work completed. 
+* **Average Wait Time:** The average time a shot has waited since it was last submission by another department. First submissions and consecutive submissions by the same department are ignored and the average wait time of all versions submitted on that day is taken. 
+
+## Application Framework
+
+![framework](img/framework.png)
+
 
 ## Folder Structure
 
 ```bash
 ./AL-data-pipeline
 ├── .github/
-│   └── pull_request_template.md
+│   └── pull_request_template.md             <- pull request template for team  collaboration
 │
 ├── .streamlit/
-│   ├── config.toml
-│   └── secrets.toml
+│   ├── config.toml                          <- Streamlit application theme configuration file
 │
-├── archieve/
+├── archieve/                                <- folder which stores the old working files of our team
 │   ├── AL-data-pipeline.Rproj
-│   ├── EDA.ipynb
-│   ├── Overheads.R
-│   ├── combine_data_leah.R
-│   ├── eda_leah.R
-│   └── snowflake code - upload.txt
+│   ├── EDA.ipynb            (Michelle)      
+│   ├── Overheads.R          (Wililam)
+│   ├── combine_data_leah.R  (Leah)          
+│   ├── eda_leah.R           (Leah)
+│   └── snowflake code - upload.txt (William)
 │
-├── img/
+├── img/                                     <- folder which stores illustration for this GH project
 │   ├── Animal_Logic_logo.png
+|   ├── demo.gif
 │   └── framework.png
 │
-├── utils/
-│   ├── chart.py
-│   └── db.py
+├── utils/                                   <- application modules folder
+│   ├── chart.py                             <- define functions for building application charts modules folder
+│   └── db.py                                <- establish connection between Snowflake and Streamlit for data extraction
 │
 ├── .gitignore
-├── Dockerfile
 ├── README.md
-├── home.py
-└── requirements.txt
+├── home.py                                  <- the main python script to run the Streamlit application
+└── requirements.txt                         <- package dependencies used for this application
 ```
 
-## Application Framework
-
-![framework](img/framework.png)
-
 ## ⚙️ Instructions
+
+The app can be accessed directly via [![Open in Streamlit](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://ndleah-al-data-pipeline-home-vzc1tq.streamlitapp.com)
+
+> However, if you wish to deploy the app on your local machine, simply follow these steps:
 
 Clone the repository
 
@@ -63,29 +89,12 @@ cd AL-data-pipeline
 Run the Docker container with docker compose
 
 ```bash
-docker-compose up -d --build
+pip install -r requirements.txt 
+streamlit run home.py
 ```
 
-The container will start in detached mode and can now be accessed via [http://localhost:8501](http://localhost:8501). 
-
-Whenever you change the app/streamlit_app.py the steamlit application will update too. If you want to build upon that example, just add your dependencies to the Dockerfile and rebuild the image using docker-compose.
-
-After you are done, and you want to tear down the application, either
-
-```bash
-docker-compose stop
-```
+The application will start in detached mode and can now be accessed via [http://localhost:8501](http://localhost:8501). 
 
 
-## 📝 Metrics Description
-### 🚀 Productivity:
-* **Total Review Value:** The weighted value of reviews from submitted work. A Director review has a value of 1, internal review has a value of 0.75, and automated reviews have a vlue of 0.05.
-* **File Size Change:** The change in the file size from the last recorded entry. This approximates the magnitude of the work completed.
-* **Total File Size:** The total size of the file submitted. This approximates the work completed and the complexity of its context.
-* **Normalised Productivity:** This take the *File Size Chnage* and normalises by the peak productivity over the project ( % peak peak productivity). This should only be used after completion of the project.
 
-### 👤 Overheads:
-* **Overhead Hours:** Hours submitted with tasks: `td`,`meeting`,`prod`,``training`, or `supervision`. These indicate human hours with no direct value added to this project.
-* **Productive Hours:** Hours submitted that are not *Overhead Hours*
-* **Overheads per Productive Hour:** The number of *Overhead ours per Productive Hour*. This may identify inefficiencies where Overheads are high when not justified in business context.
 
