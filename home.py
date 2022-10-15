@@ -69,16 +69,14 @@ def run():
 
         st.markdown(
             """
-            **🚀 Productivity:**
-            * **`Total Review Value:`** The weighted value of reviews from submitted work. A Director review has a value of 1, internal review has a value of 0.75, and automated reviews have a vlue of 0.05.
-            * **`File Size Change:`** The change in the file size from the last recorded entry. This approximates the magnitude of the work completed.
-            * **`Total File Size:`** The total size of the file submitted. This approximates the work completed and the complexity of its context.
-            * **`Normalised Productivity:`** This take the *File Size Chnage* and normalises by the peak productivity over the project ( % peak peak productivity). This should only be used after completion of the project.
-
-            **👤 Overheads:**
-            * **`Overhead Hours:`** Hours submitted with tasks: `td`,`meeting`,`prod`,`training`, or `supervision`. These indicate human hours with no direct value added to this project.
-            * **`Productive Hours:`** Hours submitted that are not *Overhead Hours*
-            * **`Overheads per Productive Hour:`** The number of *Overhead ours per Productive Hour*. This may identify inefficiencies where Overheads are high when not justified in business context.
+            * **Overhead Hours:** The Total Hours with the task description: td, prod, supervision, meeting, training, di, or NULL. This should represent the number of hours spent not producing direct value. 
+            * **Productive Hours:** Total Hours – Overhead Hours. This should represent the hours that directly produce value. 
+            * **Overheads Per Productive Hour:** Overhead Hours / Productive Hours. This should represent the number of hours spent on tasks with indirect value for every immediately productive hour. 
+            * **Artists:** The total artists assigned tasks on this project during the date range displayed. This should approximate the overall workload assigned to a department. 
+            Count Productivity: The total number of submissions for review within a date range / Total Hours. This should approximate the total task load of a department. 
+            * **File size Productivity:** The total file size of all assets submitted for review / Total Hours. This should approximate workload including complexity. 
+            * **Review Productivity:** The weighted value of assets submitted for review / Total Hours. Director review = 1, Internal review = 0.75, Surplus review = 0.01. This should approximate the direct importance of the work completed. 
+            * **Average Wait Time:** The average time a shot has waited since it was last submission by another department. First submissions and consecutive submissions by the same department are ignored and the average wait time of all versions submitted on that day is taken. 
             """
             )
 
