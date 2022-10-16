@@ -80,10 +80,6 @@ def run():
             """
             )
 
-        citation = "**Reference:** Transparent exploration of machine learning for biomarker discovery from proteomics and omics data\nFurkan M. Torun, Sebastian Virreira Winter, Sophia Doll, Felix M. Riese, Artem Vorobyev, Johannes B. Mueller-Reif, Philipp E. Geyer, Maximilian T. Strauss\nbioRxiv 2021.03.05.434053; doi: https://doi.org/10.1101/2021.03.05.434053"
-
-        st.markdown(citation)
-
   
   # Layout (Sidebar)
   st.sidebar.image("img/Animal_Logic_logo.png", use_column_width=True)
@@ -94,7 +90,7 @@ def run():
   st.sidebar.markdown('###')
   department_list = st.sidebar.multiselect('Select Departments:', clist,
                                   default=clist)
-  st.sidebar.info("You selected: {}".format(", ".join(clist)))
+  st.sidebar.info("You selected: {}".format(", ".join(department_list)))
   title = f"{metric_labels[metric]}"
 
   source = df[df['DEPARTMENT_NAME'].isin(department_list)]
