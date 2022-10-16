@@ -6,14 +6,15 @@ import os
 import pandas as pd
 from datetime import date, datetime
 
-# from constant import user, password, account, warehouse, database, schema
-
+# Initialize connection.
+# Uses st.experimental_singleton to only run once.
 @st.experimental_singleton
 def init_connection():
   return snowflake.connector.connect(**st.secrets["snowflake"])
   
 conn = init_connection()
 
+# Perform query.
 # Uses st.experimental_memo to only rerun when the query changes or after 10 min.
 @st.experimental_memo(ttl=600)
 def run_query(query):
