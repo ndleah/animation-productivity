@@ -30,7 +30,7 @@ To achieve a holistic view of the productivity, our group created several metric
 * **Productive Hours:** Total Hours – Overhead Hours. This should represent the hours that directly produce value. 
 * **Overheads Per Productive Hour:** Overhead Hours / Productive Hours. This should represent the number of hours spent on tasks with indirect value for every immediately productive hour. 
 * **Artists:** The total artists assigned tasks on this project during the date range displayed. This should approximate the overall workload assigned to a department. 
-Count Productivity: The total number of submissions for review within a date range / Total Hours. This should approximate the total task load of a department. 
+* **Count Productivity:** The total number of submissions for review within a date range / Total Hours. This should approximate the total task load of a department. 
 * **File size Productivity:** The total file size of all assets submitted for review / Total Hours. This should approximate workload including complexity. 
 * **Review Productivity:** The weighted value of assets submitted for review / Total Hours. Director review = 1, Internal review = 0.75, Surplus review = 0.01. This should approximate the direct importance of the work completed. 
 * **Average Wait Time:** The average time a shot has waited since it was last submission by another department. First submissions and consecutive submissions by the same department are ignored and the average wait time of all versions submitted on that day is taken. 
