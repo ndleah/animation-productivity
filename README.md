@@ -2,7 +2,7 @@
 ![Open Source Love](https://badges.frapsoft.com/os/v1/open-source.svg?v=103)
 [![Open in Streamlit](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://ndleah-al-data-pipeline-home-vzc1tq.streamlitapp.com)
 
-# Data Pipeline for Productivity <img src="http://pixelartmaker-data-78746291193.nyc3.digitaloceanspaces.com/image/96a034beedb086d.png" align="right" width="150" />
+# Productivity Analysis Dashboard <img src="http://pixelartmaker-data-78746291193.nyc3.digitaloceanspaces.com/image/96a034beedb086d.png" align="right" width="150" />
 
 > Group project for the iLab2 subject - Spring 2022
 
